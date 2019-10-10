@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}//////////////</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -53,14 +53,13 @@
         </a>
       </li>
     </ul>
-    <div @click="gotoshow">12313213</div>
   </div>
 </template>
 <script>
 import { model1Req } from "@/api/model1.js";
 // import { model2Req } from "@/api/model2.js";
 export default {
-  name: "HelloWorld",
+  name: "model",
   data() {
     return {
       msg: "Welcome to Your Vue.js App"
@@ -95,21 +94,13 @@ export default {
     // });
 
     //->调用第2个接口的请求服务
-    // this.reqM2Service(
-    //   "/itom/api/secure/inspection/asset/2102311PQH10H8000016",
-    //   {},
-    //   "get"
-    // ).then(res => {
-    //   // console.log(res);
-    // });
-  },
-  methods: {
-    gotoshow() {
-      this.$router.push({
-        path: "/model",
-        query: {}
-      });
-    }
+    this.reqM2Service(
+      "/itom/api/secure/inspection/asset/2102311PQH10H8000016",
+      {},
+      "get"
+    ).then(res => {
+      // console.log(res);
+    });
   }
 };
 </script>

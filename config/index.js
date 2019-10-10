@@ -10,7 +10,22 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/app': {
+        target: 'https://itom.hopesen.com.cn', //后端接口地址
+        changeOrigin: true, //是否允许跨越
+        pathRewrite: {
+          '^/app': '/'
+        }
+      },
+      '/test': {
+        target: 'http://139.159.190.139:82', //后端接口地址
+        changeOrigin: true, //是否允许跨越
+        pathRewrite: {
+          '^/test': '/'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
